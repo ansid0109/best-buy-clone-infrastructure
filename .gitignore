@@ -1,0 +1,69 @@
+# -------------------------------
+# OS / Editor noise
+# -------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# -------------------------------
+# Logs and temp files
+# -------------------------------
+*.log
+*.tmp
+tmp/
+.cache/
+
+# -------------------------------
+# Local environment files
+# -------------------------------
+.env
+.env.*
+!.env.example
+
+# -------------------------------
+# Kubernetes / cluster local files
+# -------------------------------
+.kube/
+kubeconfig
+kubeconfig.*
+*.kubeconfig
+
+# Local overrides and values files that may contain secrets
+values.local.yaml
+values.local.yml
+values.override.yaml
+values.override.yml
+
+# -------------------------------
+# Potential secret material
+# -------------------------------
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# SOPS age key (commonly used in GitOps repos)
+.agekey
+
+# -------------------------------
+# Generated manifests / dry-run outputs
+# -------------------------------
+rendered*.yaml
+rendered*.yml
+*.rendered.yaml
+*.rendered.yml
+kustomize-build*.yaml
+kustomize-build*.yml
+
+# -------------------------------
+# Terraform state (if infra state files appear here)
+# -------------------------------
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
