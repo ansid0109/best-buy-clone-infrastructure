@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store-admin-deployment
+  labels:
+    app: store-admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: store-admin
+  template:
+    metadata:
+      labels:
+        app: store-admin
+    spec:
+      containers:
+      - name: store-admin
+        image: ansid0cker/bbuy-final-store-admin:latest
+        ports:
+        - containerPort: 80
