@@ -18,7 +18,7 @@ spec:
       - name: product-service
         image: ansid0cker/bbuy-final-product-service:latest
         ports:
-        - containerPort: 80
+        - containerPort: 3002
         env:
         - name: MONGODB_URI
           value: "mongodb://mongodb:27017"
