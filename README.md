@@ -1,9 +1,3 @@
-<!-- README.md:
-Updated Architecture Diagram (Draw.io or other tool).
-Brief application explanation.
-Deployment instructions.
-Links Table: Repository links and Docker Hub image links for all services. -->
-
 # CST8915 Final Project: Best Buy on Kubernetes
 
 **Student Name**: Anoop Sidhu
@@ -25,12 +19,13 @@ Links Table: Repository links and Docker Hub image links for all services. -->
 ---
 ## Application Explanation
 
-- Using Kubernetes PersistentVolumeClaims to add persistence to Mongo.
-- Volume mounted on `/data/db`
-- Increased mongodb replicas to 3 for increased durability.
-- Added storage block, which persists even if pod is deleted.
-- Verified by querying for the same `ObjectId` between deployments.
-- Used same pattern on RabbitMQ, persisting `/var/lib/rabbitmq`, unfortunately could not achieve persistence.
+- The application consists of 5 microservices and a database
+- Store-Front: Customer-facing web app where users browse products, place orders, and track order status.
+- Store-Admin: Employee-facing web app used to manage catalog content, pricing, and internal order operations.
+- Order-Service: Backend API responsible for creating orders, validating order data, and coordinating order lifecycle events.
+- Product-Service: Backend API that exposes product catalog data and supports product create/read/update operations.
+- Makeline-Service: Background worker that consumes order events and performs asynchronous processing in the fulfillment pipeline.
+- Database: MongoDB (Stateful) used as persistent storage for product and order data across the microservices.
 
 ---
 ## Deploy to Azure Kubernetes Service (AKS)

@@ -36,3 +36,12 @@ spec:
                 - db.runCommand('ping').ok
             initialDelaySeconds: 5
             periodSeconds: 5
+    volumeClaimTemplates:
+    - metadata:
+        name: mongodb-data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 8Gi
