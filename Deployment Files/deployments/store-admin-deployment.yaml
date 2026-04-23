@@ -14,8 +14,23 @@ spec:
       labels:
         app: store-admin
     spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
       containers:
-      - name: store-admin
-        image: ansid0cker/bbuy-final-store-admin:latest
-        ports:
-        - containerPort: 80
+        - name: store-admin
+          image: ansid0cker/bbuy-final-store-admin:latest
+          ports:
+            - containerPort: 8081
+              name: store-admin
+          env:
+            - name: VUE_APP_PRODUCT_SERVICE_URL
+              value: "http://product-service:3002/"
+            - name: VUE_APP_MAKELINE_SERVICE_URL
+              value: "http://makeline-service:3001/"
+          resources:
+            requests:
+              cpu: 1m
+              memory: 200Mi
+            limits:
+              cpu: 1000m
+              memory: 512Mi
