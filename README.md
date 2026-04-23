@@ -20,8 +20,10 @@ Links Table: Repository links and Docker Hub image links for all services. -->
 
 ## Architecture Diagram
 
+![Diagram](diagrams/architecture-diagram.jpeg)
+
 ---
-## Technical Explanation of Task 2
+## Application Explanation
 
 - Using Kubernetes PersistentVolumeClaims to add persistence to Mongo.
 - Volume mounted on `/data/db`
