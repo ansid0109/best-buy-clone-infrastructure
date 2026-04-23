@@ -89,7 +89,6 @@ If validation fails for a manifest, fix that file and re-run the dry run before 
 ### 7) Deploy all manifests
 
 ```bash
-kubectl apply -f "Deployment Files/config/"
 kubectl apply -f "Deployment Files/statefulsets/"
 kubectl apply -f "Deployment Files/deployments/"
 kubectl apply -f "Deployment Files/services/"
