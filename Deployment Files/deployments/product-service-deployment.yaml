@@ -5,7 +5,7 @@ metadata:
   labels:
     app: product-service
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: product-service
@@ -19,3 +19,10 @@ spec:
         image: ansid0cker/bbuy-final-product-service:latest
         ports:
         - containerPort: 80
+        env:
+        - name: MONGODB_URI
+          value: "mongodb://mongodb:27017"
+        - name: MONGODB_DATABASE
+          value: "product_service"
+        - name: MONGODB_COLLECTION
+          value: "products"
